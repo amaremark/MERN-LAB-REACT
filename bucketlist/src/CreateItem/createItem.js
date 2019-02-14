@@ -17,7 +17,7 @@ class CreateItem extends Component {
                         <FormControl type="text" placeholder="Url" />
                     </FormGroup>
                     <FormGroup bsSize="large">
-                        <label>Add to your bucket</label>
+                        <label>Add to your document</label>
                         <FormControl type="text" placeholder="Item or Task" />
                         <p>
                             <Button className="button" bsStyle="primary">submit</Button>

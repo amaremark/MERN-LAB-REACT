@@ -16,17 +16,17 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <a href="/">React-BucketList</a>
+        <h3>  <a href="/">React-document List</a></h3>
           <Link
             to="/createitem"
             style={{ textDecoration: "none", color: "lightblue" }}
           >
-            Create Item
+           <h3 className="new"> Create New document</h3>
           </Link>
-          <Link to="/listItems"> List </Link>
+           <h3><Link to="/listItems"> List </Link></h3>
         </header>
 
-        <h1>Bucket List!</h1>
+        <h1>Document List!</h1>
 
         <section className="form" />
         <main>

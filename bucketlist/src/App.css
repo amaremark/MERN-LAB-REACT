@@ -22,3 +22,6 @@ main {
   display: flex;
   justify-content: center;
 }
+h3{
+  color: blue;
+}
