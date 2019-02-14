@@ -38,7 +38,7 @@ class ListItem extends Component {
         })
         return (
             <div>
-                <h1>Thy Bucket List</h1>
+                <h1> List</h1>
                 {listItems}
             </div>
         );

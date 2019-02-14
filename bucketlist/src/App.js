@@ -1,72 +1,53 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Navbar } from "react-bootstrap";
-import { NavItem } from 'react-bootstrap';
-import { Nav } from 'react-bootstrap';
+import React, { Component } from "react";
+import "./App.css";
+
 import CreateItem from "./CreateItem/createItem";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,Switch ,
-  // Redirect
-      } from 'react-router-dom'
-import ListItem from './ListItem/ListItem';
+import { Link, Route, Switch } from "react-router-dom";
+import ListItem from "./ListItem/ListItem";
 
-
- class App extends Component {
+class App extends Component {
   state = {
     title: this.title,
     url: this.url,
-    discription: this.discription
-  }
+    description: this.description
+  };
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <header className="App-header">
+      <div className="App">
+        <header className="App-header">
+          <a href="/">React-BucketList</a>
+          <Link
+            to="/createitem"
+            style={{ textDecoration: "none", color: "lightblue" }}
+          >
+            Create Item
+          </Link>
+          <Link to="/listItems"> List </Link>
+        </header>
 
-            <Navbar inverse collapseOnSelect>
-              <Navbar.Header>
-                <Navbar.Brand>
-                  <a href="/">React-BucketList</a>
-                </Navbar.Brand>
-                <Navbar.Toggle />
-              </Navbar.Header>
-              <Navbar.Collapse>
-                <Nav pullRight>
-                  <NavItem eventKey={1} href="#">
-                    <Link to="/createitem" style={{ textDecoration: 'none', color: "lightblue" }}>
-                      Create Item
-                    </Link>
-                  </NavItem>
-                  <NavItem>
-                    <Link to="/listItems">List</Link>
-                  </NavItem>
-                </Nav>
-              </Navbar.Collapse>
-            </Navbar>
-          </header>
-          
-            <h1>Bucket List!</h1>
-            <p>
-              This is a simple hero application where you can keep track of your bucket list progress </p>
-            <p>
-            </p>
-        
-          <section className="form">
-          </section>
-          <main>
-            <Switch>
-              <Route path="/createitem" render={props => <CreateItem {...this.state} {...props} stocks={this.props.stocks} />}/>
-               
-              <Route path="/listItems" Component={ListItem} />
-            </Switch>
-          </main>
-        </div>
-      </Router >
-    )
-    }
+        <h1>Bucket List!</h1>
+
+        <section className="form" />
+        <main>
+          <Switch>
+            <Route
+              path="/createitem"
+              render={props => (
+                <CreateItem
+                  {...this.state}
+                  {...props}
+                  stocks={this.props.stocks}
+                />
+              )}
+            />
+
+            <Route path="/listItems" Component={ListItem} />
+          </Switch>
+        </main>
+      </div>
+    );
   }
+}
 
-  export default App;
+export default App;
